@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: jsproxy
+    env: node
+    plan: free          # free tier で動かす場合はこのまま、有料プランは starter 等に変更
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+    healthCheckPath: /works
